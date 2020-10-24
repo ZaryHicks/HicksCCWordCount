@@ -55,8 +55,8 @@ public class WordCount {
     job.setReducerClass(IntSumReducer.class);
     job.setOutputKeyClass(Text.class);
     job.setOutputValueClass(IntWritable.class);
-    FileInputFormat.addInputPath(job, new Path(args[0]));
-    FileOutputFormat.setOutputPath(job, new Path(args[1]));
+    FileInputFormat.addInputPath(job, new Path(args[1]));
+    FileOutputFormat.setOutputPath(job, new Path(args[2]));
     boolean exitCode = job.waitForCompletion(true);
     long endTime = System.currentTimeMillis();
     System.out.println("Total runtime in Milliseconds: " + (endTime - startTime));
